@@ -3,6 +3,7 @@ body{padding:15px;
     background-repeat: no-repeat;
     font-size: 12;
     line-height: 1.5;
+    padding-right: 15px;;
 }
 .frontImage{
     order:2;
@@ -48,6 +49,7 @@ body{padding:15px;
           gap:10%;
             display:flex;
            align-items: center;
+           width:100%;
 flex-wrap: wrap;
 justify-content: space-around;
             
@@ -154,6 +156,34 @@ p{
     font-size: 1.12em;
 }
 
+.contact{
+   width:60%;
+   margin:auto;
+}
+
+.social{
+    display:flex; 
+    width:50%;
+    color:#676c8f;
+    flex-direction: row;
+    justify-content: space-between;
+    gap:10%;
+   
+   
+}
+
+.contact a{
+    text-decoration: none;
+    color:#2b3990;
+}
+
+
+.social img{
+    width:20%;
+    height:auto;
+    min-width:35px;
+}
+
 @media only screen and (max-width:1000px)
 {
     body{font-size: smaller;
@@ -169,13 +199,15 @@ p{
         
         width:100%;
         height:fit-content;
-        margin:0px;
+        margin-right:0px;
         padding:0px;
+        box-sizing: border-box;
         text-align: center;
+        
     }
     .Nav-items li{
         width:inherit;
-        box-sizing: border-box;
+        
         box-shadow: 1px 2px 5px gray;
             }
 
@@ -188,12 +220,20 @@ p{
     header{
            display:flex;
            flex-direction: column;
-           align-content: flex-start;
+           align-items: center;
+           justify-items: center;
             width:100%;
-            padding: 10px;
             
+            box-sizing: border-box;
             font-size: small;
            text-align: center;
+        }
+        .social{
+            display:flex; 
+            width:max-content;
+            color:#676c8f;
+            flex-direction: row;
+            justify-content: space-between;
         }
 
         .Nav-items :hover{
@@ -241,5 +281,10 @@ width:100%;
 
 
     }
+    .contact{
+        width:90%;
+        margin:auto;
+     }
+    
 
 }
