@@ -201,6 +201,13 @@ p{
     padding:15px;
   
 }
+.thankyou{
+    text-align: center;
+}
+
+.thankyou a{
+    color:#676c8f;
+}
 
 .formInput{
     width:95%;
