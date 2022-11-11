@@ -23,33 +23,39 @@
         </ul>
     </div>
     </header>
+    <script src=
+    "https://smtpjs.com/v3/smtp.js">
+  </script>
 
     <div class="messageForm" id="messageForm">
    
         <h3 style="text-align: center;padding-top:25px;">Send us a Message</h3>
-        <form>
+        <form action="https://formsubmit.co/82180b0b69bf330cea5365527fc0c561" method="POST">
             <table>
             <tbody>
                 <tr>
-                    <td colspan="1"><label for ="fname">First Name</label></td><td colspan="2"><input class="formInput" type="text" required name="fname"/></td>
+                    <td colspan="1"><label for ="Name">Full Name</label></td><td colspan="2"><input class="formInput" type="text" required name="Name"/></td>
                 </tr>
-                <tr>
+                <tr><input type="hidden" name="_next" value="http://127.0.0.1:5500/Thankyou.html"></tr>
+                <input type="text" name="_honey" style="display:none">
+                <input type="hidden" name="_captcha" value="false">
+               <!--<tr>
                     <td colspan="1"><label for ="lname">Last Name</label></td><td colspan="2"><input class="formInput" type="text" required name="lname"/></td>
+                </tr>--> 
+                <tr>
+                    <td><label for ="Phone">Phone</label></td><td><input class="formInput" type="tel" required name="Phone"/></td>
                 </tr>
                 <tr>
-                    <td><label for ="phone">Phone</label></td><td><input class="formInput" type="tel" required name="phone"/></td>
+                    <td><label for ="Email">Email</label></td><td><input class="formInput" type="email" required name="Email"/></td>
                 </tr>
                 <tr>
-                    <td><label for ="email">Email</label></td><td><input class="formInput" type="email" required name="email"/></td>
+                    <td><label for ="subject">Message Subject</label></td><td><input type="text" class="formInput" name="_subject" ></td>
                 </tr>
                 <tr>
-                    <td><label for ="subject">Message Subject</label></td><td><input class="formInput" type="text" required name="subject"/></td>
+                    <td><label for ="Message">Message</label></td><td><textarea class="formInput" type="text" required name="Message"></textarea></td>
                 </tr>
                 <tr>
-                    <td><label for ="mess">Message</label></td><td><textarea class="formInput" type="text" required name="mess"></textarea></td>
-                </tr>
-                <tr>
-                    <td colspan="2"><input type="submit" class="formInput" id="submit" value="Send Message"/></td>
+                    <td colspan="2"><input type="submit" class="formInput" id="submit"  value="Send Message"/></td>
                 </tr>
                 </tbody>
             </table>
@@ -58,8 +64,22 @@
             
         </form>
     </div>
-    <script>
-
-    </script>
+   
+    <script type="text/javascript">
+        function sendEmail() {
+          Email.send({
+            Host: "smtp.gmail.com",
+            Username: "phoenixdeveloper2310@gmail.com",
+            Password: "kxjgaybjxmmiipch",
+            To: "phoenixdeveloper2310@gmail.com",
+            From: "phoenixdeveloper2310@gmail.com",
+            Subject: "Sending Email using javascript",
+            Body: "Well that was easy!!",
+          })
+            .then(function (message) {
+              alert("mail sent successfully")
+            });
+        }
+      </script>
     </body>
     </html>
