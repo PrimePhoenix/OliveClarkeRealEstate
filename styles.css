@@ -1,3 +1,6 @@
+
+/*General Styling*/
+
 body{padding:15px;
     height:100vh;
     background-repeat: no-repeat;
@@ -6,101 +9,120 @@ body{padding:15px;
     padding-right: 15px;;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
+
+
+
+/*header and logo*/
+
+#logo{
+    
+    width:10%;
+    min-width:100px;
+    margin:15px;
+    height:auto;
+    min-height: 100px;
+    background-image: url('/images/OliveClarke_logo.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+#header{
+        
+    flex-direction: row;;
+    gap:10%;
+    display:flex;
+    align-items: center;
+    width:100%;
+    flex-wrap: wrap;
+    justify-content: space-around;
+                
+}
+
+/* menu section default settings*/
+
+.Nav-items{
+    display:flex;
+    flex-direction:row;
+    width:60%;
+    height:100px;
+    font-size: 1.5em;
+    flex-wrap: wrap;         
+    justify-content: space-between;
+}
+        
+.Nav-items li a{
+    text-decoration: none;
+    color:#2b3990;
+    
+    font-weight: bolder;
+    
+}
+
+
+.Nav-items li a:hover{
+    color:black;
+    
+text-shadow: 0px 1px 5px Blue;
+}
+       
+.Nav-items li{
+    list-style: none;
+}
+/*****************home page ***************************************/
+
+.main{
+    display:flex; flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    
+}
+
+/*section with button and text on main home page*/
+#col1{
+    display:flex;
+    flex-direction: column;
+    justify-content:space-evenly ;
+    width:50%;
+    
+}
+
+
+    
+/* small text on main section*/
+
+.main span
+{
+    font-size: 1.2em;
+    color:#676c8f;
+    padding-right: 20px;
+}
+
+/* Main text on home page*/
+.main p
+{
+    width:70%;
+    font-size: 3em;
+    color:#2b3990;
+    font-weight: bolder;
+}
+
+/*front page image*/
+
 .frontImage{
     order:2;
     width:40vw;
     height:auto;
     min-width:25%;
     max-height:150%;
-   /* background-image: url('./appraiser.jpg');
-    background-size: cover;*/
-   
     background-repeat: no-repeat;
     box-shadow: 1px 1px 3px gray;
     border-radius: 5px 5px;
 
     -webkit-mask-image:-webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)))
 }
-        #col1{
-            display:flex;
-            flex-direction: column;
-            justify-content:space-evenly ;
-            width:50%;
-            
-        }
-
-
-
-        #logo{
-            
-            width:10%;
-            min-width:100px;
-            margin:15px;
-            height:auto;
-            min-height: 100px;
-            background-image: url('/images/OliveClarke_logo.png');
-            background-repeat: no-repeat;
-            background-size: contain;
-        }
-
-        #header{
-             
-            flex-direction: row;;
-            
-          gap:10%;
-            display:flex;
-           align-items: center;
-           width:100%;
-flex-wrap: wrap;
-justify-content: space-around;
-            
-        }
-        .Nav-items{
-            display:flex;
-            flex-direction:row;
-            width:60%;
-            height:100px;
-            font-size: 1.5em;
-            flex-wrap: wrap;
-            
-            
-            justify-content: space-between;
-        }
-        .Nav-items li a{
-            text-decoration: none;
-            color:#2b3990;
-           
-            font-weight: bolder;
-            
-        }
-
-
-        .Nav-items li a:hover{
-            color:black;
-            
-        text-shadow: 0px 1px 5px Blue;}
-        .Nav-items li{
-            list-style: none;
-        }
         
-        .main{
-            display:flex; flex-direction: row;
-            justify-content: center;
-            flex-wrap: wrap;
-            
-        }
-.main span{
-font-size: 1.2em;
-color:#676c8f;
-padding-right: 20px;
-}
 
-        .main p{
-            width:70%;
-            font-size: 3em;
-            color:#2b3990;
-            font-weight: bolder;
-        }
+/*button on home page*/
 .btn-request{
     box-shadow:1px 2px 5px gray ;
     color:white;
@@ -111,7 +133,7 @@ padding-right: 20px;
     margin:5px;
     padding:10px;
     border-radius:8px;
-transition: all ease-in-out 1s;
+    transition: all ease-in-out 1s;
     background-color:#bd1c2c;
 }
 
@@ -121,6 +143,11 @@ transition: all ease-in-out 1s;
     transform: scale(1.05);
     cursor: pointer;
 }
+/*End of home page*/
+
+
+/*****************************Services page***********************************/
+
 
 .services{
     width:80%;
@@ -128,19 +155,22 @@ transition: all ease-in-out 1s;
     margin-left:10%;
     margin-bottom: 2%;
    
-border-radius:5px;
+    border-radius:5px;
     box-shadow: 1px 2px 5px gray;
     padding: 10px;
     box-sizing: border-box;
-   /* background-image: linear-gradient(to bottom right ,white,rgb(246, 172, 244));
-   */ 
+   
 }
+
+
+/*****************************About page***********************************/
 
 .about{
     font-size: 1.12em;
- color:#676c8f;
+    color:#676c8f;
 }
-.about a{
+.about a
+{
     color:#2b3990;
     text-decoration: none;
     font-weight: bold;
@@ -157,6 +187,9 @@ p{
     color:#676c8f;
     font-size: 1.12em;
 }
+
+
+/*****************************Contact page***********************************/
 
 .contact{
    width:60%;
@@ -186,7 +219,10 @@ p{
     min-width:35px;
 }
 
-.messageForm{
+/*****************************Message page***********************************/
+
+.messageForm
+{
     width:50%;
      height:auto;
      margin:auto;
@@ -195,19 +231,15 @@ p{
     
 }
 
-.messageForm table{
+.messageForm table
+{
     width:100%;
     box-sizing: border-box;
     padding:15px;
   
 }
-.thankyou{
-    text-align: center;
-}
 
-.thankyou a{
-    color:#676c8f;
-}
+
 
 .formInput{
     width:95%;
@@ -257,18 +289,45 @@ table #submit:hover{
     cursor: pointer;
 }
 
+/*****************************Thank you page***********************************/
+
+.thankyou
+{
+    text-align: center;
+}
+
+.thankyou a
+{
+    color:#676c8f;
+}
+
+/*****************************Screen size greater than 700px and less than 1000***********************************/
+
+
 @media only screen and (max-width:1000px)
 {
-    body{font-size: smaller;
+    body{
+        font-size: smaller;
     }
 
- .main p{
-    font-size: 2.3em;
-    width:100%;
- }
-    
+    /*******************Header section**********************/
+
+    header{
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        justify-items: center;
+         width:100%;
+         
+         box-sizing: border-box;
+         font-size: small;
+        text-align: center;
+     }
+
+        
+            
     .Nav-items{
-        /*display:none;*/
+        
         
         width:100%;
         height:fit-content;
@@ -278,107 +337,94 @@ table #submit:hover{
         text-align: center;
         
     }
-    .Nav-items li{
-        width:inherit;
-        
-        box-shadow: 1px 2px 5px gray;
-            }
 
     .Nav-items li:hover{
-        width:100%;
-        color:white;
+
         background:aqua;
         
+    }      
+
+    .Nav-items a
+    {
+        display: block;
+
+        width:100%;
+
     }
-    header{
-           display:flex;
-           flex-direction: column;
-           align-items: center;
-           justify-items: center;
-            width:100%;
-            
-            box-sizing: border-box;
-            font-size: small;
-           text-align: center;
-        }
-        .social{
-            display:flex; 
-            width:max-content;
-            color:#676c8f;
-            flex-direction: row;
-            justify-content: space-between;
-        }
 
-        .Nav-items :hover{
-            display: block;
-            
-width:100%;
-            
-        }
-#frontImage{
-    order:1;
-   
-}
-        #col1{
-            order:2;
-            
-        }
     .Nav-items li{
-           
-            width:100%;
-            padding: 10px;
+                    
+        width:100%;
+        padding: 10px;
+        box-shadow: 1px 2px 5px gray;
+        font-size: small;
+        text-align: center;
+    }
+
+
+    /***************************Contact page******************************/
+    .social{
+        display:flex; 
+        width:max-content;
+        color:#676c8f;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    /*****************Home page************************/
+    .main p
+    {
+        font-size: 2.3em;
+        width:100%;
+    }
+
             
-            font-size: small;
-           text-align: center;
-        }
 
-        .messageForm{
-            width:100%;
-            box-sizing: border-box;
-        }
-        
-        /*.formInput{
-            width:95%;
-            height:45px;
-            box-sizing: border-box;
-            border-radius:8px;
-            box-shadow: 1px 1px 2px gray;
-            margin:15px;
-            margin-right: 5%;
-           
-        }*/
-
+    /**********Message page*********/
+    .messageForm
+    {
+        width:100%;
+        box-sizing: border-box;
+    }
+                
 
 
 } 
+/*************************Screen sizes less than 700px****************************/
 
 @media only screen and (max-width:700px)
 {
-    .main{
+    /****************Home page*********************/
+    .main
+    {
         display:flex; flex-direction: column-reverse;
         align-content: center;
-       
-        
+          
     }
     
-    #col1{
+    #col1
+    {
         width:100%;
         order:1;
     }
 
-    .frontImage{
-        
+    .frontImage
+    {        
         width:100%;
-        
-
-
+      
     }
+
+    /***********Contact Page********/
     .contact{
         width:90%;
         margin:auto;
      }
 
-     .messageForm #submit{
+
+     /***********Message Page***************/
+
+     .messageForm #submit
+     {
       
         width:100%;
      }
