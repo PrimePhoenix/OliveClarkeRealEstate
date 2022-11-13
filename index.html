@@ -22,7 +22,7 @@
            
             <li><a href="/About.html#About">About Us</a></li>
               <li><a href="/Contact.html#contact">Contact Us</a></li>
-            <li><a href="#">Reviews</a></li>
+            <li><a href="/Reviews.html#container">Reviews</a></li>
            
         </ul>
     </div>
@@ -40,6 +40,85 @@
 
 </div>
 </div>
+<script src="/scripts/index.js"></script>
+<script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-analytics.js";
+    import {getFirestore, collection, getDocs,addDoc, setDoc,doc  } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-firestore.js"
+    
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "AIzaSyC1S_xqClYrNcMsbC_pqiExiOoPMf3Lo_A",
+      authDomain: "ucc-app-b129a.firebaseapp.com",
+      databaseURL: "https://ucc-app-b129a-default-rtdb.firebaseio.com",
+      projectId: "ucc-app-b129a",
+      storageBucket: "ucc-app-b129a.appspot.com",
+      messagingSenderId: "869513187850",
+      appId: "1:869513187850:web:bff4f7d32b5dd5ba6a85f3",
+      measurementId: "G-VKD4RBH7SP"
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+    const db= getFirestore();
+
+    const collectionRef=collection(db,'OliveClarkeRealEstate');
+
+    /**** The submit my post button gets clicked***/
+    let postIt= document.getElementById("submitEntry");
+if(postIt!=null)
+   { postIt.addEventListener("click",()=>
+   {
+        let confirmSubmit=confirm("Are you sure you want to post these comments?");
+        
+        if(confirmSubmit==true){
+    let Comment=document.querySelector("#comment").value;
+    let Name=document.querySelector("#name").value;
+        let email=document.querySelector("#email").value;
+        const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+        ;
+        let ThisDate= new Date();
+        let Today=months[ThisDate.getMonth()]+" "+ThisDate.getDate()+", "+ThisDate.getFullYear();
+
+        addEntries(Comment,Name,Today,email);
+        alert("Entry added");
+        
+        form.reset();
+        document.querySelector("#container").style.display="block";
+        document.querySelector("#newRating").style.display="none";
+ }
+
+});
+   }
+    async function addEntries(comment,name,Today,email)
+    {
+                    await setDoc(doc(collectionRef, email), {
+        Comment: comment, DatePosted:Today, Email:email,
+        Name: name});
+    }
+
+    async function retrieveData(){
+            const querySnapshot = await getDocs(collection(db, 'OliveClarkeRealEstate'));
+            querySnapshot.forEach((doc) => {
+            // doc.data() is never undefined for query doc snapshots
+            console.log(doc.id, " => ", doc.data());
+
+            comments.push({Customer:doc.data().Name,Comment:doc.data().Comment,Date:doc.data().DatePosted});
+            loadComments();
+});}
+retrieveData();
+
+
+
+
+
+</script>
 
 </body>
 </html>

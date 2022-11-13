@@ -301,6 +301,119 @@ table #submit:hover{
     color:#676c8f;
 }
 
+/**************************Review Page*****************************/
+
+a{
+    box-sizing:border-box;
+    width:auto;
+    
+    display:block;
+    text-decoration:none;
+    }
+    
+    #container li div{
+    
+    font-Size:0.8em;
+    color:gray;
+    }
+    
+    
+    #container li{
+    width:max-content;
+    box-shadow:1px 2px 5px gray;
+    list-style:none;
+    box-sizing:border-box;
+    padding:15px;
+    min-width:50%;
+    max-width:100%;
+    margin-bottom:15px;
+    border-radius:5px;
+    
+    }
+    
+    
+    #newRating{
+    
+    border:2px solid whitesmoke;
+    display:none;
+    }
+    
+    #newRating form{
+    width:50%;
+    margin:auto;
+    
+    }
+    
+    #container,#newRating{
+    width:80%;
+    margin:auto;
+    color:#2b3990;
+    }
+    
+    #Review{
+    padding:0px;
+    
+    
+    }
+    .rateus {
+        color:#2b3990;
+        transition: all ease-in-out 1s;
+    }
+    #container button,.submit{
+        transition: all ease-in-out 1s;
+        
+    }
+    
+    .rateus :hover{
+    cursor:pointer;
+    margin-left:1%;
+    
+    display:inline-block;
+    transform: scale(1.1);
+    }
+    
+    #newReviewBtn:hover{
+        transform: scale(1.05);
+    }
+   
+    #container button,.submit{
+    background-color: #bd1c2c;
+    height:auto;
+    padding:15px;
+    color:white;
+    font-size:1.5em;
+    border:none;
+    border-radius:8px;
+    font-weight:bold;
+    box-shadow: 1px 3px 5px gray;
+    margin:15px 0px 15px 0px;
+    cursor:pointer;
+    }
+    
+    table{width:100%;}
+
+    
+    table .submit:hover{
+        transform: scale(1.05);
+        
+    }
+
+    #comment{
+    
+    box-shadow:1px 1px 1px 1px gray;
+    box-sizing:border-box;
+    min-height:40px;
+    padding:15px;
+    width:95%;
+    border-radius:8px;
+    margin-left:5%;
+    border:none;
+    
+    }
+    
+
+
+
 /*****************************Screen size greater than 700px and less than 1000***********************************/
 
 
@@ -386,7 +499,13 @@ table #submit:hover{
         width:100%;
         box-sizing: border-box;
     }
-                
+            /*************************Review************/
+     #newRating{
+        width:100%;
+     }
+     #newRating form{
+        width:90%;
+     }     
 
 
 } 
@@ -428,6 +547,7 @@ table #submit:hover{
       
         width:100%;
      }
+    
     
 
 }

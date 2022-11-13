@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <title>Reviews</title>
+</head>
+<body>
+    <header id="header">
+        <a href="/index.html"><div class="img" id="logo"></div></a>
+       
+        <ul class="Nav-items">
+            
+            <li><a href="/index.html">Home</a></li><li>
+                <a href="/services.html#ourservices">Services Offered</a></li>
+           
+            <li><a href="/About.html#About">About Us</a></li>
+              <li><a  href="/Contact.html#contact">Contact Us</a></li>
+            <li><a style="color:#bd1c2c" href="/Reviews.html#container">Reviews</a></li>
+           
+        </ul>
+    </div>
+    </header>
+    <div id="container">
+    
+
+        <div>Done business with us before? <span class="rateus" onclick="addReview()"><strong>Rate our service and Add a Review</strong> </span></div>
+        
+        <h3 >Reviews</h3>
+        <ul id="Review">
+        
+        
+        
+        </ul>
+        <div id="Nocomments">No Review as yet.</div>
+        <button id="newReviewBtn" onclick="addReview()">Add a review</button>
+        
+        
+        
+        </div>
+        
+        <div id="newRating">
+        
+        
+        <form method="post" id="reviewform" action="/Reviews.html" onsubmit="return false">
+        <h2> New Comment </h2>
+        <table>
+        <tbody>
+        <tr>
+            <td>
+                <label for="name">Name</label>
+        
+            </td>
+            <td>
+                <input type="text" class="formInput" id="name" name="name" required/>
+            </td>
+        
+        </tr>
+        <tr>
+            <td>
+                <label for="email">Email</label>
+            </td>
+            <td>
+                <input type="email" class="formInput" id="email" name="email" required/>
+            </td>
+        
+        </tr>
+        
+        <tr>
+            <td>
+                <label for="comment">Comments<label>
+            </td>
+            <td>
+                <textarea id="comment" name="comment" rows="6" required></textArea>
+            </td>
+        
+        
+        
+        </tr>
+        <tr><td colspan="1"><button style="background:#2b3990" id="cancelcomment" class="submit" style="float:left;">Cancel</button></td><td colspan="3"><button type="submit" class="submit"  name="submit" id="submitEntry" style="float:right;" value="Post my Comment">Post my Comment</button></td></tr>
+        
+        </tbody>
+        
+        </table>
+        
+        
+        </form >
+        <div>
+
+<script async src="/scripts/index.js"></script>
+     <script type="module">
+
+            // Import the functions you need from the SDKs you need
+            import { initializeApp } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-app.js";
+            import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-analytics.js";
+            import {getFirestore, collection, getDocs,addDoc, setDoc,doc  } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-firestore.js"
+            
+            // TODO: Add SDKs for Firebase products that you want to use
+            // https://firebase.google.com/docs/web/setup#available-libraries
+          
+            // Your web app's Firebase configuration
+            // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+
+            const firebaseConfig = {
+              apiKey: "AIzaSyC1S_xqClYrNcMsbC_pqiExiOoPMf3Lo_A",
+              authDomain: "ucc-app-b129a.firebaseapp.com",
+              databaseURL: "https://ucc-app-b129a-default-rtdb.firebaseio.com",
+              projectId: "ucc-app-b129a",
+              storageBucket: "ucc-app-b129a.appspot.com",
+              messagingSenderId: "869513187850",
+              appId: "1:869513187850:web:bff4f7d32b5dd5ba6a85f3",
+              measurementId: "G-VKD4RBH7SP"
+            };
+          
+            // Initialize Firebase
+            const app = initializeApp(firebaseConfig);
+            const analytics = getAnalytics(app);
+            const db= getFirestore();
+
+            const collectionRef=collection(db,'OliveClarkeRealEstate');
+
+            /**** The submit my post button gets clicked***/
+            let postIt= document.getElementById("submitEntry");
+
+            postIt.addEventListener("click",()=>
+           {
+            
+            let Comment=document.getElementById("comment");
+            
+                let Name=document.querySelector("#name");
+                let email=document.querySelector("#email");
+                const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+                ;
+                let ThisDate= new Date();
+                let Today=months[ThisDate.getMonth()]+" "+ThisDate.getDate()+", "+ThisDate.getFullYear();
+
+                
+                if(Comment.value=='')
+                        {
+                           
+                            Comment.focus();
+
+                        }else if(Name.value=="")
+                        {
+                            Name.focus();
+                        } else if(email.value=="")
+                        {
+                            email.focus();
+                        }else{
+                            var confirmsubmit=confirm("are you sure you want to submit?");
+
+               
+                                if(confirmsubmit==true)
+                                {
+                                
+                                        addEntries(Comment.value,Name.value,Today,email.value);
+                                                
+                                }
+                            
+
+                        }
+
+               
+        
+        });
+
+
+
+        /*******Create new entries when the form is submitted*******/
+            async function addEntries(comment,name,Today,email)
+            {
+                            await setDoc(doc(collectionRef, email), {
+                Comment: comment, DatePosted:Today, Email:email,
+                Name: name});
+             
+                alert("Entry added");
+               
+
+
+                /***immediately pulls the newly updated data to display it**/
+
+                const loadData =(retrieveData(),async ()=>{
+                    
+                    form.reset();
+                   window.location.reload();
+                })
+
+                loadData();
+                ;
+                document.getElementById("Nocomments").innerText=temp;
+            }
+
+
+            //retrieves data from the database
+
+            async function retrieveData(){
+                
+       
+                    const querySnapshot = await getDocs(collection(db, 'OliveClarkeRealEstate'));
+                    querySnapshot.forEach((doc) => {
+                    // doc.data() is never undefined for query doc snapshots
+                    //console.log(doc.id, " => ", doc.data());
+                    
+                    //function which renders to the DOM
+                    loadComments2(doc.data());
+                    
+                    
+})
+
+
+}
+
+ //to retrieve data and update DOM as soon as this page is finish loading  
+retrieveData();
+
+
+
+</script>
+
+</body>
+</html>
