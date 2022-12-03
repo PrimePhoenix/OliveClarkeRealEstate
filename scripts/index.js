@@ -16,6 +16,7 @@
         document.getElementById("Nocomments").style.display="none";
             
        
+        
         newComment=document.createElement("li");
         newComment.innerText=comm.Comment;
         CommentData=document.createElement("div");
