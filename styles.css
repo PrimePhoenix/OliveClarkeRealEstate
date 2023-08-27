@@ -10,6 +10,16 @@ body{padding:15px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
+/*********Input validation********/
+input {
+    border: 2px solid currentcolor;
+  }
+  input:invalid {
+    border: 2px solid red;
+  }
+  input:invalid:focus {
+    background-image: linear-gradient(pink, lightgreen);
+  }
 
 
 /*header and logo*/

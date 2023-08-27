@@ -189,7 +189,7 @@
 
                 loadData();
                 ;
-                document.getElementById("Nocomments").innerText=temp;
+                document.getElementById("Nocomments").innerText="loading.....";
             }
 
 
@@ -197,6 +197,8 @@
 
             async function retrieveData(){
                 
+                document.getElementById("Nocomments").innerText='Loading Reviews...'
+                document.getElementById("Nocomments").style.display="block";
        
                     const querySnapshot = await getDocs(collection(db, 'OliveClarkeRealEstate'));
                     querySnapshot.forEach((doc) => {
