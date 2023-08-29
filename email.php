@@ -54,7 +54,10 @@ try {
     $mail->AltBody = $Message;
 
     $mail->send();
-    echo 'Message has been sent';
+    echo '<script>alert("Message has been sent")</script>';
+    header("Location:index.html");
 } catch (Exception $e) {
-    echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+  //  echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+    echo '<script>alert("Message could not be sent")</script>';
+    header("Location:index.html");
 }
