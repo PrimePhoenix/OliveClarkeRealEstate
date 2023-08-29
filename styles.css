@@ -470,10 +470,12 @@ a{
     .Nav-items a
     {
         display: block;
-
+color: #2b3990;
         width:100%;
 
     }
+
+    
 
     .Nav-items li{
                     
@@ -484,6 +486,21 @@ a{
         text-align: center;
     }
 
+    .Nav-items li a{
+        text-decoration: none;
+        color:#2b3990;
+        
+        font-weight: bolder;
+        
+    }
+    
+    
+    .Nav-items li a:hover{
+        color:black;
+        
+    text-shadow: 0px 1px 5px Blue;
+    }
+      
 
     /***************************Contact page******************************/
     .social{
@@ -530,6 +547,7 @@ a{
         align-content: center;
           
     }
+ 
     
     #col1
     {

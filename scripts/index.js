@@ -34,7 +34,9 @@
         document.querySelector("#newRating").style.display="block";
         }
         
-document.getElementById("cancelcomment").addEventListener('click',(e)=>{
+        if(document.getElementById("cancelcomment")!=null)
+{
+        document.getElementById("cancelcomment").addEventListener('click',(e)=>{
     
     
         e.preventDefault();
@@ -48,9 +50,10 @@ document.getElementById("cancelcomment").addEventListener('click',(e)=>{
         document.querySelector("#newRating").style.display="none";
         }
     })
+}
        
 
-           
+  
 
             
            
