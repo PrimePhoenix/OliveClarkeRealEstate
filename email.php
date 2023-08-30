@@ -34,17 +34,17 @@ try {
     $mail->isSMTP();                                            //Send using SMTP
     $mail->Host       = 'smtp.titan.email';                     //Set the SMTP server to send through
     $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-    $mail->Username   = 'services@bromfieldrealtors.com';                     //SMTP username
-    $mail->Password   = 'Latoya@2507';                               //SMTP password
+    $mail->Username   = 'services@oliveclarkerealestate.com';                     //SMTP username
+    $mail->Password   = 'OCReal_Estate2023';                               //SMTP password
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
     $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
     //Recipients
-    $mail->setFrom('services@bromfieldrealtors.com', 'Mailer');
+    $mail->setFrom('services@oliveclarkerealestate.com', 'Mailer');
     $mail->addAddress($Email, $Fullname);     //Add a recipient
     $mail->addAddress('rohan.powell36@yahoo.com');               //Name is optional
-    $mail->addReplyTo('services@bromfieldrealtors.com', 'Information');
-    $mail->addCC('services@bromfieldrealtors.com');
+    $mail->addReplyTo('services@oliveclarkerealestate.com', 'Information');
+    $mail->addCC('services@oliveclarkerealestate.com');
     
 
     //Content
@@ -55,9 +55,12 @@ try {
 
     $mail->send();
     echo '<script>alert("Message has been sent")</script>';
-    header("Location:index.html");
+    header("Location:Thankyou.html");
 } catch (Exception $e) {
   //  echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
     echo '<script>alert("Message could not be sent")</script>';
     header("Location:index.html");
+   
 }
+
+ 
