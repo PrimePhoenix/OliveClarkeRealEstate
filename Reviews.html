@@ -205,14 +205,14 @@
 
             async function retrieveData(){
                 
-                document.getElementById("Nocomments").innerText='Loading Reviews...'
+                document.getElementById("Nocomments").innerText='No review yet'
                 document.getElementById("Nocomments").style.display="block";
        
                     const querySnapshot = await getDocs(collection(db, 'OliveClarkeRealEstate'));
                     querySnapshot.forEach((doc) => {
                     // doc.data() is never undefined for query doc snapshots
-                    //console.log(doc.id, " => ", doc.data());
-                    
+                   // console.log(doc.id, " => ", doc.data());
+                   
                     //function which renders to the DOM
                     loadComments2(doc.data());
                     

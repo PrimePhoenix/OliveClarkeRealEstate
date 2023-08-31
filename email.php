@@ -59,7 +59,7 @@ try {
 } catch (Exception $e) {
   //  echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
     echo '<script>alert("Message could not be sent")</script>';
-    //header("Location:index.html");
+    header("Location:index.html");
    
 }
 

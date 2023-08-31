@@ -11,6 +11,7 @@
         
         if(document.getElementById("Nocomments").style.display=="none"&&comm==null)
         {
+            document.getElementById("Nocomments").innerText='No Reviews yet.'
             document.getElementById("Nocomments").style.display="block";
         }else{
         document.getElementById("Nocomments").style.display="none";
