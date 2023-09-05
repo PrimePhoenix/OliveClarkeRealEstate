@@ -1,17 +1,16 @@
 <?php
-  $Email="";
-  $Message="";
-  $phone="";
-  $Fullname="";
-  $Subject="";
+$Email = "";
+$Message = "";
+$phone = "";
+$Fullname = "";
+$Subject = "";
 
-if(isset($_POST['submit']))
-{
-    $Email=$_POST['email'];
-    $Message=$_POST['message'];
-    $phone=$_POST['tel'];
-    $Fullname=$_POST['fullname'];
-    $Subject=$_POST['subject'];
+if (isset($_POST['submit'])) {
+  $Email = $_POST['email'];
+  $Message = $_POST['message'];
+  $phone = $_POST['tel'];
+  $Fullname = $_POST['fullname'];
+  $Subject = $_POST['subject'];
 }
 
 
@@ -29,38 +28,36 @@ require 'vendor/autoload.php';
 $mail = new PHPMailer(true);
 
 try {
-    //Server settings
-    $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
-    $mail->isSMTP();                                            //Send using SMTP
-    $mail->Host       = 'smtp.titan.email';                     //Set the SMTP server to send through
-    $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-    $mail->Username   = 'services@oliveclarkerealestate.com';                     //SMTP username
-    $mail->Password   = 'OCReal_Estate2023';                               //SMTP password
-    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
-    $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+  //Server settings
+  $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
+  $mail->isSMTP();                                            //Send using SMTP
+  $mail->Host = 'smtp.gmail.com';                     //Set the SMTP server to send through
+  $mail->SMTPAuth = true;                                   //Enable SMTP authentication
+  $mail->Username = 'codertest@gmail.com';                     //SMTP username
+  $mail->Password = 'topCoder123';                               //SMTP password
+  $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
+  $mail->Port = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
-    //Recipients
-    $mail->setFrom('services@oliveclarkerealestate.com', 'Mailer');
-    $mail->addAddress($Email, $Fullname);     //Add a recipient
-    $mail->addAddress('rohan.powell36@yahoo.com');               //Name is optional
-    $mail->addReplyTo('services@oliveclarkerealestate.com', 'Information');
-    $mail->addCC('services@oliveclarkerealestate.com');
-    
+  //Recipients
+  $mail->setFrom('codertest@gmail.com', 'Mailer');
+  $mail->addAddress($Email, $Fullname);     //Add a recipient
+  $mail->addAddress('rohan.powell36@yahoo.com');               //Name is optional
+  $mail->addReplyTo('codertest@gmail.com', 'Information');
+  $mail->addCC('codertest@gmail.com');
 
-    //Content
-    $mail->isHTML(true);                                  //Set email format to HTML
-    $mail->Subject = $Subject;
-    $mail->Body    = '<h3>Message from </h3>'.$Fullname.'<h3>Email</h3>'.$Email.'<h3>Contact</h3>'.$phone.'<h3>Message</h3>'.$Message;
-    $mail->AltBody = $Message;
 
-    $mail->send();
-   
-    header("Location:Thankyou.html");
+  //Content
+  $mail->isHTML(true);                                  //Set email format to HTML
+  $mail->Subject = $Subject;
+  $mail->Body = '<h3>Message from </h3>' . $Fullname . '<h3>Email</h3>' . $Email . '<h3>Contact</h3>' . $phone . '<h3>Message</h3>' . $Message;
+  $mail->AltBody = $Message;
+
+  $mail->send();
+
+  header("Location:Thankyou.html");
 } catch (Exception $e) {
   //  echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
-    echo '<script>alert("Message could not be sent")</script>';
-    header("Location:index.html");
-   
-}
+  echo '<script>alert("Message could not be sent")</script>';
+  header("Location:index.html");
 
- 
+}
