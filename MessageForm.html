@@ -3,77 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="Send a Message to Sample Real Estate Co. Ltd and We will respond promptly ">
-    <meta name="keywords" content="Real Estate,Property,Sample, Valuators,Assessors">
+    <meta name="description" content="Send a Message to Sample Real Estate Co. Ltd and We will respond promptly">
+    <meta name="keywords" content="Real Estate, Property, Sample, Valuators, Assessors">
     <meta name="author" content="Sample">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="styles.css">
     <title>Message Sample Assessors</title>
 </head>
 <body>
-    <style>
-
- 
-    </style>
     <header id="header">
-        <a href="/index.html"><div class="img" id="logo"></div></a>
-   
+        <a href="/index.html">
+            <div class="img" id="logo"></div>
+        </a>
+    
         <ul class="Nav-items">
-            
-            <li><a href="/index.html" >Home</a></li><li>
-                <a href="/services.html#ourservices" >Services Offered</a></li>
-           
-            <li><a href="/About.html#About" >About Us</a></li>
-              <li><a href="/Contact.html#contact" style="color:#bd1c2c" >Contact Us</a></li>
-            <li><a href="/Reviews.html#container" >Reviews</a></li>
-           
+    
+            <li><a href="/index.html">Home</a></li>
+            <li>
+                <a href="/services.html#ourservices">Services Offered</a>
+            </li>
+    
+            <li><a href="/About.html#About">About Us</a></li>
+            <li><a style="color:#bd1c2c"  href="/Contact.html#contact">Contact Us</a></li>
+            <li><a href="/Reviews.html#container">Reviews</a></li>
+    
         </ul>
-        
-    </div>
+    
+        </div>
     </header>
 
     <div class="messageForm" id="messageForm">
-   
-        <h3 style="text-align: center;padding-top:25px;">Send us a Message</h3>
-     
-       <form action="email.php" method="POST">
-       <table>
-            <tbody>
-                <tr>
-                    <td colspan="1"><label for ="Name">Full Name</label></td><td colspan="2"><input class="formInput" type="text" name="fullname" required name="Name" minlength="10"/></td>
-                </tr>
-                <tr><input type="hidden" name="_next" value="https://monkfish-app-c2rnr.ondigitalocean.app/Thankyou.html"></tr>
-                <input type="text" name="_honey" style="display:none" >
-                <input type="hidden" name="_captcha" value="false">
-               <!--<tr>
-                    <td colspan="1"><label for ="lname">Last Name</label></td><td colspan="2"><input class="formInput" type="text" required name="lname"/></td>
-                </tr>--> 
-                <tr>
-                    <td><label for ="Phone">Phone</label></td><td><input class="formInput" type="tel" name="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="format: xxx-xxx-xxxx" required name="Phone"/></td>
-                </tr>
-                <tr>
-                    <td><label for ="Email">Email</label></td><td><input class="formInput" type="email" required name="email"/></td>
-                </tr>
-                <tr>
-                    <td><label for ="subject">Message Subject</label></td><td><input type="text" class="formInput" name="subject" minlength="10" required></td>
-                </tr>
-                <tr>
-                    <td><label for ="Message">Message</label></td><td><textarea class="formInput" type="text" required name="message" minlength="35" required></textarea></td>
-                </tr>
-                <tr>
-                    <td colspan="2"><input type="submit" class="formInput" id="submit" name="submit" value="Send Message"/></td>
-                </tr>
-                </tbody>
-            </table>
-            
-            
-            
-        </form>
-    </div>
-   <footer>
-    <p>© 2025 Sample Real Estate Co. Ltd</p>
-  </footer>
-    </body>
-    </html>
+        <h3 class="form-title">Send us a Message</h3>
+        <form action="email.php" method="POST">
+            <fieldset>
+                <legend>Contact Information</legend>
+                <label for="Name">Full Name</label>
+                <input class="formInput" type="text" id="Name" name="fullname" required minlength="10" placeholder="Enter your full name">
+                
+                <label for="Phone">Phone</label>
+                <input class="formInput" type="tel" id="Phone" name="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="Format: xxx-xxx-xxxx" required>
+                
+                <label for="Email">Email</label>
+                <input class="formInput" type="email" id="Email" name="email" placeholder="Enter your email" required>
+            </fieldset>
 
-   
+            <fieldset>
+                <legend>Message Details</legend>
+                <label for="subject">Message Subject</label>
+                <input class="formInput" type="text" id="subject" name="subject" minlength="10" required placeholder="Enter the subject">
+                
+                <label for="Message">Message</label>
+                <textarea class="formInput" id="Message" name="message" minlength="35" required placeholder="Enter your message"></textarea>
+            </fieldset>
+
+           
+            <div style="width:100%""><button type="submit" id="submit" class="submit"  name="submitForm" aria-label="Send Message" value="Send Message">Send Message</button></div>
+         </form>
+    </div>
+
+    <footer role="contentinfo">
+        <p>© 2025 Sample Real Estate Co. Ltd</p>
+    </footer>
+</body>
+</html>
